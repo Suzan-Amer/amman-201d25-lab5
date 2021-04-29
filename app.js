@@ -46,17 +46,25 @@ Write a function called sumAndMultiply() that takes in three numbers as separate
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
 
+
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+let s1 = sum(a,b)[0]
+let s2 = sum(c,s1)[0]
+let m1 =multiply(a,b)[0]
+let m2 = multiply (c ,m1)[0]
+
+return[s2 , m2 ,`${a} and ${b} and ${c} sum to ${s2}.`,
+`The product of ${a} and ${b} and ${c} is ${m2}.` ];
+
 
 }
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
